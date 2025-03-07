@@ -3,10 +3,29 @@ import streamlit as st
 import pandas as pd
 import os
 from io import BytesIO
-#setting us the app
+
+
+#setting up the app
 st.set_page_config(page_title="💿 Data Sweeper", layout='wide')
 st.title("💿 Data Sweeper")
-st.write("Transform your files between CSV and Excel formats with built-in data cleaning and visualization!")
+# Custom CSS to change title color
+st.markdown(
+    """
+    <style>
+        h1 {
+            color: #6c3483 !important;  /* Change color */
+            text-align: center;  /* Center the title  */
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
+    "<p style='text-align: center; font-size: 18px;'>Transform your files between CSV and Excel formats with built-in data cleaning and visualization!</p>",
+    unsafe_allow_html=True
+)
+
+st.write("")  # Adds a gap
 
 uploaded_files = st.file_uploader("Upload your files (CSV or Excel):", type=["CSV","xlsx"],
 accept_multiple_files=True)
@@ -50,7 +69,7 @@ if uploaded_files:
         df = df[columns]
 
         #create some visualizations
-        st.subheader("Data Viaualization")
+        st.subheader("Data Visualization")
         if st.checkbox(f"📊 show Visualization for {file.name}"):
             st.bar_chart(df.select_dtypes(include='number').iloc[:,:2])
 

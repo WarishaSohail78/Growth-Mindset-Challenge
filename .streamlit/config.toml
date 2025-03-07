@@ -1,0 +1,5 @@
+[theme]
+base="light"  # Change to "dark" for dark mode
+backgroundColor="#ebdef0"  # Change this to any color you want
+primaryColor="#FF4B4B"
+textColor="#000000"
