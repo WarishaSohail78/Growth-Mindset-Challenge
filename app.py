@@ -98,3 +98,15 @@ if uploaded_files:
             )            
 #show progress
             st.success("🎉All files processed successfully")
+
+#adding footnote
+st.write("")
+st.write("")
+st.write("")
+st.markdown("---")  # Adds a horizontal line for separation
+st.markdown("""
+    <p>⭐ 
+    <span style="font-size: 13px;">Developed by</span>
+    <span style="font-size: 18px; font-weight: bold; color: #6c3483;">WARISHA SOHAIL</span> — 
+    <span style="font-size: 12px;"> GIAIC-WED (7PM-10PM)</span></p>
+    """, unsafe_allow_html=True)
